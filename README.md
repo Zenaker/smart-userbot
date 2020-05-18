@@ -4,7 +4,7 @@ This user bot learns all messages from a user chose by you
 # How to install and run it
 - before you do anything you want to run `setup.sh` by doing `sudo bash setup.sh`
 - after you set everything up, you want to change the `config.ini` variables. 
-** do not touch `api_id` and `api_hash` **
+**do not touch `api_id` and `api_hash`**
 1. run `create_session.py` with `python3 create_session.py`
 2. after you have your session is created, grab the name and put it into `session_name` in the `config.ini` file.
 3. you have to put your telegram ID in the `my_id` field.
