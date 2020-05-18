@@ -20,3 +20,9 @@ This user bot learns all messages from a user chose by you
 /learn (group link or group username) - after the userbot joins the group it will start start learning by getting all messages from the person defined in the config.ini person_id_to_learn_from field
 /disablechat - disables chat mode
 ```
+
+# Need Help? Join our telegram group by clicking the picture below
+[![telegram](http://www.freepnglogos.com/uploads/telegram-logo-15.png)](https://t.me/tfchat)
+
+# Or join our discord
+[![discord](http://i.imgur.com/cbfIsqM.png)](https://discord.com/invite/PcXbQA3)
