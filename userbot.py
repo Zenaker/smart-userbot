@@ -97,45 +97,48 @@ def learn(client, message):
                 client.send_message(message['chat']['id'], "Chat mode is enabled")
             elif not chat_mode:
                 client.send_message(message['chat']['id'], "Chat mode is disabled")
-            
-    if chat_mode == True and message['text'] not in commands:
-        if "text" in str(message) and "pyrogram.Animation" not in str(message) and "pyrogram.Sticker" not in str(message) and "pyrogram.Photo" not in str(message) and "pyrogram.Video" not in str(message) and "messageMediaDocument" not in str(message):
-            # reply to messages
-            question = message['text']
-            message_id = message['message_id']
-            questions = get_questions()
-            
-            if question in questions:
-                answers = get_answers(question)
-                answer = random.choice(answers)
-                
-                if str(message['chat']['id']).startswith("-100"):
-                    if dice():
+    
+    try:
+        if chat_mode == True and message['text'] not in commands:
+            if "text" in str(message) and "pyrogram.Animation" not in str(message) and "pyrogram.Sticker" not in str(message) and "pyrogram.Photo" not in str(message) and "pyrogram.Video" not in str(message) and "messageMediaDocument" not in str(message):
+                # reply to messages
+                question = message['text']
+                message_id = message['message_id']
+                questions = get_questions()
+
+                if question in questions:
+                    answers = get_answers(question)
+                    answer = random.choice(answers)
+
+                    if str(message['chat']['id']).startswith("-100"):
+                        if dice():
+                            client.read_history(message['chat']['id'])
+                            client.send_chat_action(message['chat']['id'], "typing")
+                            Timer(random.randint(2,7), send_action_message, [client, message, answer, message_id]).start()
+
+                    elif str(message['chat']['id']).startswith("-") == False:
                         client.read_history(message['chat']['id'])
                         client.send_chat_action(message['chat']['id'], "typing")
                         Timer(random.randint(2,7), send_action_message, [client, message, answer, message_id]).start()
-                        
-                elif str(message['chat']['id']).startswith("-") == False:
-                    client.read_history(message['chat']['id'])
-                    client.send_chat_action(message['chat']['id'], "typing")
-                    Timer(random.randint(2,7), send_action_message, [client, message, answer, message_id]).start()
-            
-            elif question not in questions:
-                matches = [SequenceMatcher(None, question, str(x)).quick_ratio() for x in questions]
-                closest_question = questions[matches.index(max(matches))]
-                answers = get_answers(closest_question)
-                final_answer = random.choice(answers)
-                
-                if str(message['chat']['id']).startswith("-100"):
-                    if dice():
+
+                elif question not in questions:
+                    matches = [SequenceMatcher(None, question, str(x)).quick_ratio() for x in questions]
+                    closest_question = questions[matches.index(max(matches))]
+                    answers = get_answers(closest_question)
+                    final_answer = random.choice(answers)
+
+                    if str(message['chat']['id']).startswith("-100"):
+                        if dice():
+                            client.read_history(message['chat']['id'])
+                            client.send_chat_action(message['chat']['id'], "typing")
+                            Timer(random.randint(2,7), send_action_message, [client, message, final_answer, message_id]).start()
+
+                    elif str(message['chat']['id']).startswith("-") == False:
                         client.read_history(message['chat']['id'])
                         client.send_chat_action(message['chat']['id'], "typing")
                         Timer(random.randint(2,7), send_action_message, [client, message, final_answer, message_id]).start()
-                        
-                elif str(message['chat']['id']).startswith("-") == False:
-                    client.read_history(message['chat']['id'])
-                    client.send_chat_action(message['chat']['id'], "typing")
-                    Timer(random.randint(2,7), send_action_message, [client, message, final_answer, message_id]).start()
+    except:
+        pass
 
 
 app.run()
