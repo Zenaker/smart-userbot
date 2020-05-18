@@ -18,4 +18,5 @@ This user bot learns all messages from a user chose by you
 /leave - by calling this command the userbot leaves from the current group the command was called on
 /status - returns if chat mode is enabled or disabled
 /learn (group link or group username) - after the userbot joins the group it will start start learning by getting all messages from the person defined in the config.ini person_id_to_learn_from field
+/disablechat - disables chat mode
 ```
