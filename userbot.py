@@ -20,7 +20,7 @@ mario_id = config.getint("userbot", "person_id_to_learn_from")
 chat_mode = False
 
 # userbot commands
-commands = ["/ping", "/enablechat", "/leave", "/status", "/learn"]
+commands = ["/ping", "/enablechat", "/leave", "/status", "/learn", "/disablechat"]
 
 def dice():
     n = [1,2,3]
@@ -93,6 +93,10 @@ def learn(client, message):
             if message['text'] == "/enablechat":
                 chat_mode = True
                 client.send_message(message['chat']['id'], "chat mode has been enabled")
+                
+            if message['text'] == "/disablechat":
+                chat_mode = False
+                client.send_message(message['chat']['id'], "chat mode has been disabled")
 
             if message['text'] == "/status":
                 if chat_mode:
