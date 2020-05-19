@@ -15,6 +15,9 @@ sudo apt install python3-pip
 # install pyrogram
 pip3 install pyrogram
 
+# install TgCrypto
+pip3 install TgCrypto
+
 # all done!
 
-echo "\nall requirements installed!"
+echo "all requirements installed!"
