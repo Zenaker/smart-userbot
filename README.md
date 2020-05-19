@@ -26,3 +26,6 @@ This user bot learns all messages from a user chose by you
 
 # Or join our discord
 [![discord](http://i.imgur.com/cbfIsqM.png)](https://discord.com/invite/PcXbQA3)
+
+# Donations
+BTC address: 3D1FXKMMH46iDNYwn8u7bScrPfbu4ekfDc
