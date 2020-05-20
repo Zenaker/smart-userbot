@@ -172,7 +172,7 @@ def learn(client, message):
     
     try:        
         if chat_mode == True and message['text'] not in commands:
-            if "text" in str(message) and "pyrogram.Animation" not in str(message) and "pyrogram.Sticker" not in str(message) and "pyrogram.Photo" not in str(message) and "pyrogram.Video" not in str(message) and "messageMediaDocument" not in str(message):
+            if "text" in str(message) and message['edit_date'] is None and "pyrogram.Animation" not in str(message) and "pyrogram.Sticker" not in str(message) and "pyrogram.Photo" not in str(message) and "pyrogram.Video" not in str(message) and "messageMediaDocument" not in str(message):
                 # reply to messages
                 question = message['text']
                 message_id = message['message_id']
