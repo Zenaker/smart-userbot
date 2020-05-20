@@ -31,4 +31,4 @@ This user bot learns all messages from a user chose by you
 [![discord](http://i.imgur.com/cbfIsqM.png)](https://discord.com/invite/PcXbQA3)
 
 # Donations
-BTC address: 3D1FXKMMH46iDNYwn8u7bScrPfbu4ekfDc
+BTC (Bitcoin) wallet address: 3D1FXKMMH46iDNYwn8u7bScrPfbu4ekfDc
