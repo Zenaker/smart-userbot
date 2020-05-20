@@ -19,6 +19,7 @@ This user bot learns all messages from a user chose by you
 /status - returns if chat mode is enabled or disabled
 /learn (group link or group username) - after the userbot joins the group it will start start learning by getting all messages from the person defined in the config.ini person_id_to_learn_from field
 /disablechat - disables chat mode
+/stoplearning - the userbot will stop all its learning processes
 ```
 
 # Need Help? Join our telegram group by clicking the picture below
