@@ -1,7 +1,7 @@
 # smart-userbot
 ![python](https://img.shields.io/badge/python-3.x-red.svg)
 
-This user bot learns all messages from a user chose by you
+This user bot learns all messages from a telegram user in a group chose by you
 
 # How to install and run it
 - before you do anything you want to run `setup.sh` by doing `sudo bash setup.sh`
